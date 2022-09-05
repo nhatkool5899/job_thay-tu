@@ -42,6 +42,28 @@
     /* line-height: 204px; */
 }
 
+.input-search{
+    position:absolute;
+    display: flex;
+    justify-content: flex-end;
+    top: 5rem;
+    right: 0;
+    height: 5rem;
+    width: 50rem;
+    font-size: 1.8rem;
+}
+
+.input-search #keyword{
+    padding: 1rem 2rem;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.input-search #submit{
+    padding: 0.2rem 2rem;
+    border: 1px solid #ccc;
+}
+
 .navbar-item a{
     font-size: 2.3rem;
 }
@@ -55,6 +77,7 @@
 }
 
 .header_bottom-search{
+    position: relative;
     text-align: center;
 }
 
