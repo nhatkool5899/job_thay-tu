@@ -44,24 +44,33 @@
 
 .input-search{
     position:absolute;
-    display: flex;
+    display: none;
     justify-content: flex-end;
-    top: 5rem;
-    right: 0;
-    height: 5rem;
+    top: 4.8rem;
+    right: -50rem;
+    height: 6.6rem;
     width: 50rem;
     font-size: 1.8rem;
+    animation: animate1 0.4s ease-in-out;
+    /* transition: 0.5s; */
+}
+
+.input-search.active{
+    display: flex;
+    right: 0;
 }
 
 .input-search #keyword{
     padding: 1rem 2rem;
     width: 100%;
     border: 1px solid #ccc;
+    border-radius: 0.4rem;
 }
 
 .input-search #submit{
-    padding: 0.2rem 2rem;
+    padding: 0.2rem 1rem;
     border: 1px solid #ccc;
+    border-radius: 10%;
 }
 
 .navbar-item a{
@@ -79,14 +88,20 @@
 .header_bottom-search{
     position: relative;
     text-align: center;
+    display: none;
 }
 
 .btn-search{
     font-size: 2.2rem;
     color: #222;
     font-weight: 300;
-    padding: 0.4rem 1.6rem;
+    padding: 0.6rem 1.6rem;
     border: 1px solid #ddd;
+}
+
+.btn-menu{
+   border: 1px solid #ccc;
+   padding: 0 1rem;
 }
 
 
@@ -800,6 +815,14 @@
     left: 0rem;
 }
 
+.navbar-sm-active{
+    display: block;
+    position: fixed;
+    height: 100%;
+    text-align: center;
+    animation: animate1 0.3s ease-in;
+}
+
 
 
 
@@ -814,11 +837,19 @@
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1280px;
     }
+
+    .header_bottom-search{
+        display: block;
+    }
 }
 
 @media (min-width: 992px) and (max-width:1200px){
     .header_bottom-logo{
         display: none;
+    }
+
+    .header_bottom-search{
+        display: block;
     }
 
     .header_bottom-navbar{
@@ -876,10 +907,6 @@
 
     .header_bottom-navbar-dropdown a:focus{
         background-color: #EB9500;
-    }
-
-    .header_bottom-navbar-dropdown a:hover, .dropdown-menu{
-        /* display: block; */
     }
 
     .banner-sm {
@@ -1017,8 +1044,12 @@
         background-color: #EB9500;
     }
 
-    .header_bottom-navbar-dropdown a:hover, .dropdown-menu{
-        /* display: block; */
+    .input-search{
+        top: 4.8rem;
+        right: -50rem;
+        height: 5rem;
+        width: 40rem;
+        font-size: 1.6rem;
     }
 
     .banner-sm {
@@ -1114,11 +1145,20 @@
         transition: .3s ease-in-out;
         height: auto;
     }
+
+    .desc-text{
+        font-size: 1.8rem;
+    }
+
+    .desc-action{
+        font-size: 1.8rem;
+    }
 }
 
 /* ------Mobile -----------*/
 
 @media (max-width:576px){
+    
     .header_bottom-navbar{
         display: none;
     }
@@ -1131,34 +1171,48 @@
         display: block;
     }
 
+    .header_bottom-logo{
+        padding-right: 10rem;
+    }
+
     .header_bottom-navbar-dropdown{
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .header_bottom-navbar-dropdown a:focus{
         background-color: #EB9500;
     }
 
-    .header_bottom-navbar-dropdown a:hover, .dropdown-menu{
-        /* display: block; */
+    .input-search{
+        top: 4.8rem;
+        right: -50rem;
+        height: 5rem;
+        width: 26rem;
+        font-size: 1.6rem;
     }
 
-    .header_bottom-logo{
-        display: none;
+    .input-search #submit {
+        padding: 0.2rem 0.8rem;
+        font-size: 1.4rem;
     }
 
     .banner-sm {
         right: 0;
-        width: 22rem;
+        width: 15rem;
         height: 100%;
     }
 
+    .introduce_imgs{
+        display: block;
+    }
+
     .introduce-title{
-        margin: 2rem;
+        margin: 1rem;
     }
 
     .introduce-title h2{
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .introduce_right{
@@ -1183,7 +1237,7 @@
     }
 
     .banner-title {
-        margin: 1rem 0;
+        margin: 4rem 0;
     }
     
     .banner-title h2{
@@ -1196,8 +1250,7 @@
     }
 
     .banner-text-home {
-        margin: 0 1rem;
-        font-size: 1.4rem;
+        display: none;
     }
 
     .banner-line{
@@ -1206,6 +1259,20 @@
 
     .img-item{
         height: auto;
+        width: 20rem;
+        margin: auto;
+    }
+
+    .img-item-style{
+        margin: 1rem auto;
+    }
+
+    .courses-img-list{
+        display: block;
+    }
+
+    .course-img-item{
+        margin: 2rem 0;
     }
 
     .course-img-text {
@@ -1253,5 +1320,21 @@
     .memoir-top-item{
         width: 30rem;
         margin: auto;
+    }
+
+    .navbar-sm-active{
+        top: 43%;
+    }
+
+    .header_bottom-navbar-dropdown a {
+        font-size: 2.4rem;
+    }
+
+    .desc-text{
+        font-size: 1.8rem;
+    }
+
+    .desc-action{
+        font-size: 1.8rem;
     }
 }
